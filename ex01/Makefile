@@ -3,7 +3,8 @@
 NAME	=	Zombie
 LIST	=	main \
 			ClapTrap \
-
+			ScavTrap \
+			
 HEADER	=	-I includes/
 CFLAGS	=	-Wall -Wextra -Werror -MMD
 CC		=	clang++
