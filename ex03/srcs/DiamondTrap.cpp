@@ -5,7 +5,8 @@
 
 DiamondTrap::DiamondTrap( void )
 {
-    this->_name = "_clap_name";
+    this->_name = "";
+    ClapTrap::_name = this->_name + "_clap_name";
     this->_hitPoints = FragTrap::ClapTrap::_hitPoints;
     this->_energyPoints = ScavTrap::ClapTrap::_energyPoints;
     this->_attackDamage = FragTrap::ClapTrap::_attackDamage;
@@ -14,7 +15,8 @@ DiamondTrap::DiamondTrap( void )
 
 DiamondTrap::DiamondTrap( std::string name )
 {
-    this->_name = name + "_clap_name";
+    this->_name = name;
+    ClapTrap::_name = name + "_clap_name";
     this->_hitPoints = FragTrap::ClapTrap::_hitPoints;
     this->_energyPoints = ScavTrap::ClapTrap::_energyPoints;
     this->_attackDamage = FragTrap::ClapTrap::_attackDamage;

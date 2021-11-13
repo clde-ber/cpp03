@@ -11,8 +11,8 @@ int main(void)
     ScavTrap four(three);
     FragTrap five("fifth one");
     FragTrap six(five);
-    DiamondTrap dOne("diamondOne");
-    DiamondTrap dTwo("diamondTwo");
+    DiamondTrap dOne("diamond one");
+    DiamondTrap dTwo("diamond two");
 
     one.attack(two.getName());
     two.takeDamage(one.getAttackDamage());
