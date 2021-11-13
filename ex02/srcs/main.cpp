@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
@@ -7,6 +8,8 @@ int main(void)
     ClapTrap two("second one");
     ScavTrap three("third one");
     ScavTrap four(three);
+    FragTrap five("fifth one");
+    FragTrap six(five);
 
     one.attack(two.getName());
     two.takeDamage(one.getAttackDamage());
@@ -18,5 +21,13 @@ int main(void)
     four.takeDamage(one.getAttackDamage());
     four.beRepaired(four.getEnergyPoints());
     four.guardGate();
+    three.attack(five.getName());
+    five.takeDamage(three.getAttackDamage());
+    five.beRepaired(five.getEnergyPoints());
+    five.highFivesGuys();
+    three.attack(six.getName());
+    six.takeDamage(three.getAttackDamage());
+    six.beRepaired(six.getEnergyPoints());
+    six.highFivesGuys();
     return 0;
 }

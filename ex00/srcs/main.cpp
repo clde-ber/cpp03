@@ -10,7 +10,7 @@ int main(void)
     two.takeDamage(one.getAttackDamage());
     two.beRepaired(two.getEnergyPoints());
     one.attack(three.getName());
-    three.takeDamage(three.getAttackDamage());
+    three.takeDamage(one.getAttackDamage());
     three.beRepaired(three.getEnergyPoints());
     return 0;
 }
