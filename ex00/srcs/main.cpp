@@ -2,8 +2,8 @@
 
 int main(void)
 {
-    ClapTrap one("first one");
-    ClapTrap two("second one");
+    ClapTrap one("claptrap_one");
+    ClapTrap two("claptrap_secd");
     ClapTrap three(two);
 
     one.attack(two.getName());

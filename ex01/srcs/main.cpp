@@ -3,9 +3,9 @@
 
 int main(void)
 {
-    ClapTrap one("first one");
-    ClapTrap two("second one");
-    ScavTrap three("third one");
+    ClapTrap one("claptrap_one");
+    ClapTrap two("claptrap_secd");
+    ScavTrap three("scavtrap_one");
     ScavTrap four(three);
 
     one.attack(two.getName());

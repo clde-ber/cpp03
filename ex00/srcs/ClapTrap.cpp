@@ -42,7 +42,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     std::cout << "ClapTrap " << this->_name << " gets " << amount << " energy points " << "so it has now " << this->_hitPoints << " hitpoints!" << std::endl;
 }
 
-std::string ClapTrap::getName( void )
+std::string & ClapTrap::getName( void )
 {
     return this->_name;
 }

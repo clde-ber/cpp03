@@ -1,6 +1,6 @@
 .SUFFIXES:
 
-NAME	=	Zombie
+NAME	=	scavtrap
 LIST	=	main \
 			ClapTrap \
 			ScavTrap \
