@@ -3,14 +3,12 @@
 int main(void)
 {
     ClapTrap one("claptrap_one");
-    ClapTrap two("claptrap_secd");
-    ClapTrap three(two);
+    ClapTrap three(one);
 
-    one.attack(two.getName());
-    two.takeDamage(one.getAttackDamage());
-    two.beRepaired(two.getEnergyPoints());
+    std::cout << std::endl;
     one.attack(three.getName());
     three.takeDamage(one.getAttackDamage());
     three.beRepaired(three.getEnergyPoints());
+    std::cout << std::endl;
     return 0;
 }

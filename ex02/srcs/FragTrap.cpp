@@ -3,33 +3,37 @@
 
 FragTrap::FragTrap( void )
 {
-    this->_name = ("");
-    this->_hitPoints = 100;
-    this->_energyPoints = 100;
-    this->_attackDamage = 30;
+    _name = ("");
+    _hitPoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
     std::cout << "FragTrap constructor called" << std::endl;
 }
 
 FragTrap::FragTrap( std::string name )
 {
-    this->_name = name;
-    this->_hitPoints = 100;
-    this->_energyPoints = 100;
-    this->_attackDamage = 30;
+    _name = name;
+    _hitPoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
     std::cout << "FragTrap constructor called" << std::endl;
 }
 
 FragTrap::FragTrap( FragTrap const & rhs)
 {
-    this->_name = rhs._name;
-    this->_hitPoints = rhs._hitPoints;
-    this->_energyPoints = rhs._energyPoints;
-    this->_attackDamage = rhs._attackDamage;
+    _name = rhs._name;
+    _hitPoints = rhs._hitPoints;
+    _energyPoints = rhs._energyPoints;
+    _attackDamage = rhs._attackDamage;
     std::cout << "FragTrap constructor called" << std::endl;
 }
 
-const FragTrap & FragTrap::operator=( FragTrap const &rhs) const
+const FragTrap & FragTrap::operator=( FragTrap const &rhs)
 {
+    _name = rhs._name;
+    _hitPoints = rhs._hitPoints;
+    _energyPoints = rhs._energyPoints;
+    _attackDamage = rhs._attackDamage;
     return rhs;
 }
 
@@ -40,22 +44,22 @@ FragTrap::~FragTrap( void )
 
 void FragTrap::attack(std::string const & target)
 {
-    std::cout << "FragTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+    std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
 
 void FragTrap::takeDamage(unsigned int amount)
 {
-    this->_hitPoints -= amount;
-    std::cout << "FragTrap " << this->_name << " has now " << this->_hitPoints << " hitpoints!" << std::endl;
+    _hitPoints -= amount;
+    std::cout << "FragTrap " << _name << " has now " << _hitPoints << " hitpoints!" << std::endl;
 }
 
 void FragTrap::beRepaired(unsigned int amount)
 {
-    this->_hitPoints += amount;
-    std::cout << "FragTrap " << this->_name << " gets " << amount << " energy points " << "so it has now " << this->_hitPoints << " hitpoints!" << std::endl;
+    _hitPoints += amount;
+    std::cout << "FragTrap " << _name << " gets " << amount << " energy points " << "so it has now " << _hitPoints << " hitpoints!" << std::endl;
 }
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap " << this->_name << " sends a positive high fives request! " << std::endl;
+    std::cout << "FragTrap " << _name << " sends a positive high fives request! " << std::endl;
 }

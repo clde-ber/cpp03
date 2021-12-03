@@ -8,7 +8,7 @@ LIST	=	main \
 			DiamondTrap \
 			
 HEADER	=	-I includes/
-CFLAGS	=	-Wall -Wextra -Werror -MMD -Wshadow -Wno-shadow
+CFLAGS	=	-Wall -Wextra -Werror -MMD -Wshadow -Wno-shadow -std=c++98
 CC		=	clang++
 
 S_DIR	=	srcs/

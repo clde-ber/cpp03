@@ -6,7 +6,7 @@ LIST	=	main \
 			ScavTrap \
 			
 HEADER	=	-I includes/
-CFLAGS	=	-Wall -Wextra -Werror -MMD
+CFLAGS	=	-Wall -Wextra -Werror -MMD -std=c++98
 CC		=	clang++
 
 S_DIR	=	srcs/

@@ -5,35 +5,39 @@
 
 DiamondTrap::DiamondTrap( void )
 {
-    this->_name = "";
-    ClapTrap::_name = this->_name + "__clap__name";
-    this->_hitPoints = FragTrap::ClapTrap::_hitPoints;
-    this->_energyPoints = ScavTrap::ClapTrap::_energyPoints;
-    this->_attackDamage = FragTrap::ClapTrap::_attackDamage;
+    _name = "";
+    ClapTrap::_name = _name + "__clap__name";
+    _hitPoints = FragTrap::ClapTrap::_hitPoints;
+    _energyPoints = ScavTrap::ClapTrap::_energyPoints;
+    _attackDamage = FragTrap::ClapTrap::_attackDamage;
     std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap( std::string name )
 {
-    this->_name = name;
+    _name = name;
     ClapTrap::_name = name + "__clap__name";
-    this->_hitPoints = FragTrap::ClapTrap::_hitPoints;
-    this->_energyPoints = ScavTrap::ClapTrap::_energyPoints;
-    this->_attackDamage = FragTrap::ClapTrap::_attackDamage;
+    _hitPoints = FragTrap::ClapTrap::_hitPoints;
+    _energyPoints = ScavTrap::ClapTrap::_energyPoints;
+    _attackDamage = FragTrap::ClapTrap::_attackDamage;
     std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap( DiamondTrap const & rhs)
 {
-    this->_name = rhs._name;
-    this->_hitPoints = rhs._hitPoints;
-    this->_energyPoints = rhs._energyPoints;
-    this->_attackDamage = rhs._attackDamage;
+    _name = rhs._name;
+    _hitPoints = rhs._hitPoints;
+    _energyPoints = rhs._energyPoints;
+    _attackDamage = rhs._attackDamage;
     std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
-const DiamondTrap & DiamondTrap::operator=( DiamondTrap const &rhs) const
+const DiamondTrap & DiamondTrap::operator=( DiamondTrap const &rhs)
 {
+    _name = rhs._name;
+    _hitPoints = rhs._hitPoints;
+    _energyPoints = rhs._energyPoints;
+    _attackDamage = rhs._attackDamage;
     return rhs;
 }
 
@@ -44,17 +48,17 @@ DiamondTrap::~DiamondTrap( void )
 
 void DiamondTrap::takeDamage(unsigned int amount)
 {
-    this->_hitPoints -= amount;
-    std::cout << "DiamondTrap " << this->_name << " has now " << this->_hitPoints << " hitpoints!" << std::endl;
+    _hitPoints -= amount;
+    std::cout << "DiamondTrap " << _name << " has now " << _hitPoints << " hitpoints!" << std::endl;
 }
 
 void DiamondTrap::beRepaired(unsigned int amount)
 {
-    this->_hitPoints += amount;
-    std::cout << "DiamondTrap " << this->_name << " gets " << amount << " energy points " << "so it has now " << this->_hitPoints << " hitpoints!" << std::endl;
+    _hitPoints += amount;
+    std::cout << "DiamondTrap " << _name << " gets " << amount << " energy points " << "so it has now " << _hitPoints << " hitpoints!" << std::endl;
 }
 
 void DiamondTrap::whoAmI()
 {
-    std::cout << "My name is " << _name << std::endl;
+    std::cout << "My name is " << _name << " | claptrap name " << ClapTrap::_name << std::endl;
 }

@@ -11,7 +11,7 @@ class FragTrap : public virtual ClapTrap
         FragTrap( void );
         FragTrap( std::string name );
         FragTrap( FragTrap const & rhs);
-        const FragTrap & operator=( FragTrap const &rhs) const;
+        const FragTrap & operator=( FragTrap const &rhs);
         ~FragTrap( void );
         void highFivesGuys(void);
 };

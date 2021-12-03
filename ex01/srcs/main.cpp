@@ -4,13 +4,10 @@
 int main(void)
 {
     ClapTrap one("claptrap_one");
-    ClapTrap two("claptrap_secd");
     ScavTrap three("scavtrap_one");
     ScavTrap four(three);
 
-    one.attack(two.getName());
-    two.takeDamage(one.getAttackDamage());
-    two.beRepaired(two.getEnergyPoints());
+    std::cout << std::endl;
     one.attack(three.getName());
     three.takeDamage(one.getAttackDamage());
     three.beRepaired(three.getEnergyPoints());
@@ -18,5 +15,6 @@ int main(void)
     four.takeDamage(one.getAttackDamage());
     four.beRepaired(four.getEnergyPoints());
     four.guardGate();
+    std::cout << std::endl;
     return 0;
 }
