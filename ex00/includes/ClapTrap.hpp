@@ -27,5 +27,3 @@ class   ClapTrap
 };
 
 #endif
-
-//this operator= get
