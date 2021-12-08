@@ -5,21 +5,27 @@
 
 DiamondTrap::DiamondTrap( void )
 {
+    FragTrap f;
+    ScavTrap s;
+
     _name = "";
     ClapTrap::_name = _name + "__clap__name";
-    _hitPoints = FragTrap::ClapTrap::_hitPoints;
-    _energyPoints = ScavTrap::ClapTrap::_energyPoints;
-    _attackDamage = FragTrap::ClapTrap::_attackDamage;
+    _hitPoints = f.getHitPoints();
+    _energyPoints = s.getEnergyPoints();
+    _attackDamage = f.getAttackDamage();
     std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap( std::string name )
 {
+    FragTrap f;
+    ScavTrap s;
+
     _name = name;
     ClapTrap::_name = name + "__clap__name";
-    _hitPoints = FragTrap::ClapTrap::_hitPoints;
-    _energyPoints = ScavTrap::ClapTrap::_energyPoints;
-    _attackDamage = FragTrap::ClapTrap::_attackDamage;
+    _hitPoints = f.getHitPoints();
+    _energyPoints = s.getEnergyPoints();
+    _attackDamage = f.getAttackDamage();
     std::cout << "DiamondTrap constructor called" << std::endl;
 }
 

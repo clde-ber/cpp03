@@ -58,3 +58,8 @@ int ClapTrap::getEnergyPoints( void )
 {
     return _energyPoints;
 }
+
+int ClapTrap::getHitPoints( void )
+{
+    return _hitPoints;
+}

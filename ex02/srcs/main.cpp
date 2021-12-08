@@ -13,10 +13,10 @@ int main(void)
     five.takeDamage(three.getAttackDamage());
     five.beRepaired(five.getEnergyPoints());
     five.highFivesGuys();
-    three.attack(six.getName());
-    six.takeDamage(three.getAttackDamage());
-    six.beRepaired(six.getEnergyPoints());
-    six.highFivesGuys();
+    six.attack(five.getName());
+    five.takeDamage(six.getAttackDamage());
+    five.beRepaired(five.getEnergyPoints());
+    five.highFivesGuys();
     std::cout << std::endl;
     return 0;
 }
