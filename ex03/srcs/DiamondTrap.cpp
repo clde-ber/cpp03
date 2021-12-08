@@ -10,7 +10,7 @@ DiamondTrap::DiamondTrap( void )
     _hitPoints = FragTrap::ClapTrap::_hitPoints;
     _energyPoints = ScavTrap::ClapTrap::_energyPoints;
     _attackDamage = FragTrap::ClapTrap::_attackDamage;
-    std::cout << "DiamondTrap constructor called" << std::endl;
+    std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap( std::string name )
@@ -26,19 +26,18 @@ DiamondTrap::DiamondTrap( std::string name )
 DiamondTrap::DiamondTrap( DiamondTrap const & rhs)
 {
     _name = rhs._name;
+    ClapTrap::_name = rhs._name + "__clap__name";
     _hitPoints = rhs._hitPoints;
     _energyPoints = rhs._energyPoints;
     _attackDamage = rhs._attackDamage;
-    std::cout << "DiamondTrap constructor called" << std::endl;
+    std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
 
 const DiamondTrap & DiamondTrap::operator=( DiamondTrap const &rhs)
 {
-    _name = rhs._name;
-    _hitPoints = rhs._hitPoints;
-    _energyPoints = rhs._energyPoints;
-    _attackDamage = rhs._attackDamage;
-    return rhs;
+    std::cout << "DiamondTrap assignation operator called" << std::endl;
+    new (this) DiamondTrap(rhs);
+    return *this;
 }
 
 DiamondTrap::~DiamondTrap( void )

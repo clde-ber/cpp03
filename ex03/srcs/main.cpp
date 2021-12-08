@@ -5,15 +5,15 @@
 
 int main(void)
 {
-    ScavTrap three("scavtrap_one");
-    FragTrap five("fragtrap_one");
     DiamondTrap dOne("diamond_one");
     DiamondTrap dTwo(dOne);
 
     std::cout << std::endl;
-    five.attack(dOne.getName());
+    dTwo.attack(dOne.getName());
     dOne.attack(dTwo.getName());
     dTwo.whoAmI();
+    dTwo.highFivesGuys();
+    dOne.guardGate();
     std::cout << std::endl;
     return 0;
 }
