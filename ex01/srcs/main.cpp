@@ -11,10 +11,10 @@ int main(void)
     one.attack(three.getName());
     three.takeDamage(one.getAttackDamage());
     three.beRepaired(three.getEnergyPoints());
-    one.attack(four.getName());
-    four.takeDamage(one.getAttackDamage());
-    four.beRepaired(four.getEnergyPoints());
-    four.guardGate();
+    one.attack(three.getName());
+    three.takeDamage(one.getAttackDamage());
+    three.beRepaired(three.getEnergyPoints());
+    three.guardGate();
     std::cout << std::endl;
     return 0;
 }

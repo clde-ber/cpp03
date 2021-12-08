@@ -21,17 +21,17 @@ ScavTrap::ScavTrap( std::string name )
 
 ScavTrap::ScavTrap( ScavTrap const & rhs)
 {
+    std::cout << "ScavTrap copy constructor called" << std::endl;
+    *this = rhs;
+}
+
+ScavTrap & ScavTrap::operator=( ScavTrap const &rhs)
+{
+    std::cout << "ScavTrap assignation operator called" << std::endl;
     _name = rhs._name;
     _hitPoints = rhs._hitPoints;
     _energyPoints = rhs._energyPoints;
     _attackDamage = rhs._attackDamage;
-    std::cout << "ScavTrap copy constructor called" << std::endl;
-}
-
-const ScavTrap & ScavTrap::operator=( ScavTrap const &rhs)
-{
-    std::cout << "ScavTrap assignation operator called" << std::endl;
-    new (this) ScavTrap(rhs);
     return *this;
 }
 
@@ -52,12 +52,18 @@ void ScavTrap::attack(std::string const & target)
 
 void ScavTrap::takeDamage(unsigned int amount)
 {
+    if (_hitPoints - amount < 0)
+        amount = _hitPoints;
     _hitPoints -= amount;
-    std::cout << "ScavTrap " << _name << " has now " << _hitPoints << " hitpoints!" << std::endl;
+    std::cout << "ScavTrap " << _name << " takes " << amount << " damage and now has now " << _hitPoints << " hitpoints!" << std::endl;
 }
 
 void ScavTrap::beRepaired(unsigned int amount)
 {
+    if (_energyPoints - amount < 0)
+        amount = _energyPoints;
+    else
+        _energyPoints -= amount;
     _hitPoints += amount;
-    std::cout << "ScavTrap " << _name << " gets " << amount << " energy points " << "so it has now " << _hitPoints << " hitpoints!" << std::endl;
+    std::cout << "ScavTrap " << _name << " uses " << amount << " energy points to repair and now has " << _hitPoints << " hitpoints!" << std::endl;
 }

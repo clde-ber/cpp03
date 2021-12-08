@@ -11,8 +11,8 @@ class ScavTrap : public ClapTrap
         ScavTrap( void );
         ScavTrap( std::string name );
         ScavTrap( ScavTrap const & rhs);
-        const ScavTrap & operator=( ScavTrap const &rhs);
-        ~ScavTrap( void );
+        ScavTrap & operator=( ScavTrap const &rhs);
+        virtual ~ScavTrap( void );
         void attack(std::string const & target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);

@@ -25,18 +25,18 @@ DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name), ScavTrap(name), F
 
 DiamondTrap::DiamondTrap( DiamondTrap const & rhs) : ClapTrap(rhs), ScavTrap(rhs), FragTrap(rhs)
 {
+    *this = rhs;
+    std::cout << "DiamondTrap copy constructor called" << std::endl;
+}
+
+DiamondTrap & DiamondTrap::operator=( DiamondTrap const &rhs)
+{
+    std::cout << "DiamondTrap assignation operator called" << std::endl;
     _name = rhs._name;
     ClapTrap::_name = rhs._name + "__clap__name";
     _hitPoints = rhs._hitPoints;
     _energyPoints = rhs._energyPoints;
     _attackDamage = rhs._attackDamage;
-    std::cout << "DiamondTrap copy constructor called" << std::endl;
-}
-
-const DiamondTrap & DiamondTrap::operator=( DiamondTrap const &rhs)
-{
-    std::cout << "DiamondTrap assignation operator called" << std::endl;
-    new (this) DiamondTrap(rhs);
     return *this;
 }
 
@@ -47,14 +47,20 @@ DiamondTrap::~DiamondTrap( void )
 
 void DiamondTrap::takeDamage(unsigned int amount)
 {
+    if (_hitPoints - amount < 0)
+        amount = _hitPoints;
     _hitPoints -= amount;
-    std::cout << "DiamondTrap " << _name << " has now " << _hitPoints << " hitpoints!" << std::endl;
+    std::cout << "DiamondTrap " << _name << " takes " << amount << " damage and now has now " << _hitPoints << " hitpoints!" << std::endl;
 }
 
 void DiamondTrap::beRepaired(unsigned int amount)
 {
+    if (_energyPoints - amount < 0)
+        amount = _energyPoints;
+    else
+        _energyPoints -= amount;
     _hitPoints += amount;
-    std::cout << "DiamondTrap " << _name << " gets " << amount << " energy points " << "so it has now " << _hitPoints << " hitpoints!" << std::endl;
+    std::cout << "DiamondTrap " << _name << " uses " << amount << " energy points to repair and now has " << _hitPoints << " hitpoints!" << std::endl;
 }
 
 void DiamondTrap::whoAmI()

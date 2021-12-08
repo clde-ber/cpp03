@@ -15,15 +15,15 @@ class   ClapTrap
         ClapTrap( void );
         ClapTrap( std::string name );
         ClapTrap( ClapTrap const & rhs);
-        const ClapTrap & operator=( ClapTrap const &rhs);
-        ~ClapTrap( void );
+        ClapTrap & operator=( ClapTrap const &rhs);
+        virtual ~ClapTrap( void );
         virtual void attack(std::string const & target);
         virtual void takeDamage(unsigned int amount);
         virtual void beRepaired(unsigned int amount);
-        std::string & getName( void );
-        int getAttackDamage( void );
-        int getEnergyPoints( void );
-        int getHitPoints( void );
+        std::string const & getName( void ) const;
+        int const & getAttackDamage( void ) const;
+        int const & getEnergyPoints( void ) const;
+        int const & getHitPoints( void ) const;
 };
 
 #endif
