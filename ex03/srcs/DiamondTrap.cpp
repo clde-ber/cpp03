@@ -3,33 +3,27 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( void )
+DiamondTrap::DiamondTrap( void ) : ClapTrap(), ScavTrap(), FragTrap()
 {
-    FragTrap f;
-    ScavTrap s;
-
     _name = "";
     ClapTrap::_name = _name + "__clap__name";
-    _hitPoints = f.getHitPoints();
-    _energyPoints = s.getEnergyPoints();
-    _attackDamage = f.getAttackDamage();
+    _hitPoints = 100;
+    _energyPoints = 50;
+    _attackDamage = 30;
     std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( std::string name )
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name), ScavTrap(name), FragTrap(name)
 {
-    FragTrap f;
-    ScavTrap s;
-
     _name = name;
     ClapTrap::_name = name + "__clap__name";
-    _hitPoints = f.getHitPoints();
-    _energyPoints = s.getEnergyPoints();
-    _attackDamage = f.getAttackDamage();
+    _hitPoints = 100;
+    _energyPoints = 50;
+    _attackDamage = 30;
     std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( DiamondTrap const & rhs)
+DiamondTrap::DiamondTrap( DiamondTrap const & rhs) : ClapTrap(rhs), ScavTrap(rhs), FragTrap(rhs)
 {
     _name = rhs._name;
     ClapTrap::_name = rhs._name + "__clap__name";

@@ -18,8 +18,8 @@ class   ClapTrap
         const ClapTrap & operator=( ClapTrap const &rhs);
         ~ClapTrap( void );
         virtual void attack(std::string const & target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
+        virtual void takeDamage(unsigned int amount);
+        virtual void beRepaired(unsigned int amount);
         std::string & getName( void );
         int getAttackDamage( void );
         int getEnergyPoints( void );

@@ -40,6 +40,18 @@ FragTrap::~FragTrap( void )
     std::cout << "FragTrap destructor called" << std::endl;
 }
 
+void FragTrap::takeDamage(unsigned int amount)
+{
+    _hitPoints -= amount;
+    std::cout << "FragTrap " << _name << " has now " << _hitPoints << " hitpoints!" << std::endl;
+}
+
+void FragTrap::beRepaired(unsigned int amount)
+{
+    _hitPoints += amount;
+    std::cout << "FragTrap " << _name << " gets " << amount << " energy points " << "so it has now " << _hitPoints << " hitpoints!" << std::endl;
+}
+
 void FragTrap::highFivesGuys(void)
 {
     std::cout << "FragTrap " << _name << " sends a positive high fives request! " << std::endl;
